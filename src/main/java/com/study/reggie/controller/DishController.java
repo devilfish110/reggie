@@ -1,6 +1,5 @@
 package com.study.reggie.controller;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.study.reggie.common.R;
 import com.study.reggie.entities.Dish;
@@ -16,7 +15,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sql.DataSource;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +28,7 @@ public class DishController {
     @Autowired
     private DishService dishService;
     @Autowired
-    private DataSource dataSource;
+    private RedisTemplate redisTemplate;
 
     /**
      * 获取菜品分类分页

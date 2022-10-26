@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: reggie # 应用名称
+#  datasource:
+#    druid:
+#      name: defaultDataSource
+#      driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动
+#      url: jdbc:mysql://localhost:3306/reggie?useUnicode=true&CharacterEncoding=UTF-8&serverTimezone=UTC # 数据库连接地址
+#      username: admin # 数据库密码
+#      password: admin # 数据库密码
   shardingsphere:
     enabled: true
     datasource:
@@ -18,11 +25,11 @@ spring:
       slave0:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动
-        url: jdbc:mysql://192.168.0.3:3306/reggie?useUnicode=true&CharacterEncoding=UTF-8&serverTimezone=UTC # 数据库连接地址
-        username: root # 数据库密码
-        password: root # 数据库密码
+        url: jdbc:mysql://192.168.0.9:3306/reggie?useUnicode=true&CharacterEncoding=UTF-8&serverTimezone=UTC # 数据库连接地址
+        username: admin # 数据库密码
+        password: admin # 数据库密码
     masterslave:
-      # 负载均衡:轮循
+      # 负载均衡
       load-balance-algorithm-type: round_robin
       # 最终的数据源名称
       name: dataSource
@@ -31,9 +38,6 @@ spring:
       # 从数据源是那些
       slave-data-source-names:
         - slave0
-    props:
-      sql:
-        show: true # 显示日志
   main:
     # 允许Bean覆盖
     allow-bean-definition-overriding: true
