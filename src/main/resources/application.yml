@@ -1,5 +1,5 @@
 server:
-  port: 80 # 应用服务 WEB 访问端口
+  port: 8080 # 应用服务 WEB 访问端口
 spring:
   application:
     name: reggie # 应用名称
@@ -19,8 +19,8 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动
         url: jdbc:mysql://192.168.0.9:3306/reggie?useUnicode=true&CharacterEncoding=UTF-8&serverTimezone=UTC # 数据库连接地址
-        username: admin # 数据库密码
-        password: admin # 数据库密码
+        username: root # 数据库密码
+        password: root # 数据库密码
       # 从数据源
       slave0:
         type: com.alibaba.druid.pool.DruidDataSource
@@ -53,8 +53,8 @@ spring:
   # 配置邮箱发送者(企业等)
   mail:
     host: smtp.qq.com
-    username: reggieuser@qq.com # 发送者的邮箱地址，例如：123@qq.com
-    password: fiiwggdiqnwabejc # 邮箱授权值
+    username:  # 发送者的邮箱地址，例如：123@qq.com
+    password:  # 邮箱授权值
     default-encoding: UTF-8
     properties:
       mail:
@@ -79,4 +79,4 @@ mybatis-plus:
 
 
 reggie:
-  img-path: E:\66370\Pictures\reggie\ # 图片转存位置，绝对路径
+  img-path:  # 图片转存位置，绝对路径
